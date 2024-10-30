@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ominous Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('your-background-image.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .center-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #input-box {
+            font-size: 18px;
+            padding: 8px;
+            border: 1px solid #333;
+            background-color: #222;
+            color: #fff;
+            outline: none;
+            transition: background-color 0.3s;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #444;
+        }
+
+        #input-box.error {
+            background-color: #f00;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <audio id="background-audio" autoplay loop>
+        <source src="your-audio-file.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="center-content">
+        <input type="text" id="input-box" placeholder="Enter the code" />
+        <button onclick="checkInput()">Enter</button>
+    </div>
+
+    <div id="result-text" class="hidden">
+        <p>Qnxb ic wwylo cd tnolxl labfyd u'gmgrzc gwwnpzwr</p>
+        <p><a href="https://youtu.be/JF2F6dCG3VM" target="_blank">Link 1</a></p>
+        <p><a href="https://youtu.be/qAjHA0eSW-w" target="_blank">Link 2</a></p>
+    </div>
+
+    <script>
+        const inputBox = document.getElementById("input-box");
+        const resultText = document.getElementById("result-text");
+
+        function checkInput() {
+            const userInput = inputBox.value;
+            if (userInput === "!//..vAwtULas..") {
+                inputBox.classList.remove("error");
+                inputBox.style.display = "none";
+                document.querySelector("button").style.display = "none";
+                resultText.classList.remove("hidden");
+            } else {
+                inputBox.classList.add("error");
+                setTimeout(() => inputBox.classList.remove("error"), 500);
+            }
+        }
+
+        inputBox.addEventListener("keypress", (event) => {
+            if (event.key === "Enter") {
+                checkInput();
+            }
+        });
+    </script>
+</body>
+</html>
